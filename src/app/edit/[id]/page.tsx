@@ -25,9 +25,6 @@ export default async function EditPage({ params }: PageProps) {
     jabatan: pegawai.jabatan,
     golongan: pegawai.golongan,
     unitBagian: pegawai.unitBagian,
-    alamat: pegawai.alamat ?? "",
-    telepon: pegawai.telepon ?? "",
-    email: pegawai.email ?? "",
     tanggalMasuk: formatDate(pegawai.tanggalMasuk),
     status: pegawai.status,
   }

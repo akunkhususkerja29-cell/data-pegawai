@@ -20,9 +20,7 @@ const defaultForm: PegawaiFormData = {
   jabatan: "",
   golongan: "PNS",
   unitBagian: "",
-  alamat: "",
-  telepon: "",
-  email: "",
+
   tanggalMasuk: "",
   status: "AKTIF",
 }
@@ -148,38 +146,7 @@ export function PegawaiForm({ initialData, pegawaiId }: PegawaiFormProps) {
           options={STATUS_OPTIONS.map((o) => ({ value: o.value, label: o.label }))}
           error={errors.status}
         />
-        <Input
-          label="Email"
-          name="email"
-          type="email"
-          value={form.email}
-          onChange={handleChange}
-          error={errors.email}
-          placeholder="pegawai@imigrasi.go.id"
-        />
-        <Input
-          label="Telepon"
-          name="telepon"
-          value={form.telepon}
-          onChange={handleChange}
-          placeholder="Contoh: 0812-3456-7890"
-        />
-        <div className="md:col-span-2">
-          <div className="flex flex-col gap-1">
-            <label htmlFor="alamat" className="text-sm font-medium text-gray-700">
-              Alamat
-            </label>
-            <textarea
-              id="alamat"
-              name="alamat"
-              value={form.alamat}
-              onChange={handleChange}
-              rows={3}
-              className="rounded-lg border border-gray-300 px-3 py-2 text-sm transition focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Alamat lengkap"
-            />
-          </div>
-        </div>
+
       </div>
 
       <div className="flex items-center gap-3">

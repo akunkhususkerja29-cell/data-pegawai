@@ -5,9 +5,6 @@ export interface PegawaiData {
   jabatan: string
   golongan: "PNS" | "CPNS" | "PPPK"
   unitBagian: string
-  alamat: string | null
-  telepon: string | null
-  email: string | null
   tanggalMasuk: Date
   status: "AKTIF" | "NONAKTIF"
   createdAt: Date
@@ -20,9 +17,6 @@ export interface PegawaiFormData {
   jabatan: string
   golongan: "PNS" | "CPNS" | "PPPK"
   unitBagian: string
-  alamat: string
-  telepon: string
-  email: string
   tanggalMasuk: string
   status: "AKTIF" | "NONAKTIF"
 }

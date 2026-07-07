@@ -25,9 +25,6 @@ model Pegawai {
   jabatan      String
   golongan     Golongan
   unitBagian   String
-  alamat       String?
-  telepon      String?
-  email        String?
   tanggalMasuk DateTime     @map("tanggal_masuk")
   status       StatusPegawai @default(AKTIF)
   createdAt    DateTime     @default(now()) @map("created_at")
