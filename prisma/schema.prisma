@@ -11,6 +11,12 @@ enum Golongan {
   PNS
   CPNS
   PPPK
+  HONORER
+}
+
+enum JenisKelamin {
+  L
+  P
 }
 
 enum StatusPegawai {
@@ -19,16 +25,19 @@ enum StatusPegawai {
 }
 
 model Pegawai {
-  id           String       @id @default(cuid())
-  nip          String       @unique
+  id           String         @id @default(cuid())
+  nip          String         @unique
   nama         String
   jabatan      String
+  golRuang     String
   golongan     Golongan
-  unitBagian   String
-  tanggalMasuk DateTime     @map("tanggal_masuk")
-  status       StatusPegawai @default(AKTIF)
-  createdAt    DateTime     @default(now()) @map("created_at")
-  updatedAt    DateTime     @updatedAt @map("updated_at")
+  jenisKelamin JenisKelamin   @map("jenis_kelamin")
+  eselonisasi  String?
+  unitBagian   String?
+  tanggalMasuk DateTime       @default(now()) @map("tanggal_masuk")
+  status       StatusPegawai  @default(AKTIF)
+  createdAt    DateTime       @default(now()) @map("created_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
 
   @@map("pegawai")
 }

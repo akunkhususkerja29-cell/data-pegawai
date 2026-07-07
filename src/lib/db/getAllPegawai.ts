@@ -6,8 +6,8 @@ export async function getAllPegawai(search?: string) {
         OR: [
           { nama: { contains: search, mode: "insensitive" as const } },
           { nip: { contains: search, mode: "insensitive" as const } },
+          { golRuang: { contains: search, mode: "insensitive" as const } },
           { jabatan: { contains: search, mode: "insensitive" as const } },
-          { unitBagian: { contains: search, mode: "insensitive" as const } },
         ],
       }
     : undefined

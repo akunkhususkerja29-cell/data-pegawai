@@ -23,8 +23,11 @@ export default async function EditPage({ params }: PageProps) {
     nip: pegawai.nip,
     nama: pegawai.nama,
     jabatan: pegawai.jabatan,
+    golRuang: pegawai.golRuang,
     golongan: pegawai.golongan,
-    unitBagian: pegawai.unitBagian,
+    jenisKelamin: pegawai.jenisKelamin,
+    eselonisasi: pegawai.eselonisasi ?? "",
+    unitBagian: pegawai.unitBagian ?? "",
     tanggalMasuk: formatDate(pegawai.tanggalMasuk),
     status: pegawai.status,
   }

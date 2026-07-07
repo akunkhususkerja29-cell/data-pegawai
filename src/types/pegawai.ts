@@ -3,8 +3,11 @@ export interface PegawaiData {
   nip: string
   nama: string
   jabatan: string
-  golongan: "PNS" | "CPNS" | "PPPK"
-  unitBagian: string
+  golRuang: string
+  golongan: "PNS" | "CPNS" | "PPPK" | "HONORER"
+  jenisKelamin: "L" | "P"
+  eselonisasi: string | null
+  unitBagian: string | null
   tanggalMasuk: Date
   status: "AKTIF" | "NONAKTIF"
   createdAt: Date
@@ -15,7 +18,10 @@ export interface PegawaiFormData {
   nip: string
   nama: string
   jabatan: string
-  golongan: "PNS" | "CPNS" | "PPPK"
+  golRuang: string
+  golongan: "PNS" | "CPNS" | "PPPK" | "HONORER"
+  jenisKelamin: "L" | "P"
+  eselonisasi: string
   unitBagian: string
   tanggalMasuk: string
   status: "AKTIF" | "NONAKTIF"

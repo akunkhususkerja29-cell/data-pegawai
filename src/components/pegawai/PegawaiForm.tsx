@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Input } from "../ui/Input"
 import { Select } from "../ui/Select"
 import { Button } from "../ui/Button"
-import { GOLONGAN_OPTIONS, STATUS_OPTIONS } from "@/constants/golongan"
+import { GOLONGAN_OPTIONS, JENIS_KELAMIN_OPTIONS, STATUS_OPTIONS } from "@/constants/golongan"
 import { UNIT_BAGIAN_OPTIONS } from "@/constants/unitBagian"
 import type { PegawaiFormData } from "@/types/pegawai"
 
@@ -18,9 +18,11 @@ const defaultForm: PegawaiFormData = {
   nip: "",
   nama: "",
   jabatan: "",
+  golRuang: "",
   golongan: "PNS",
+  jenisKelamin: "L",
+  eselonisasi: "",
   unitBagian: "",
-
   tanggalMasuk: "",
   status: "AKTIF",
 }
@@ -113,6 +115,14 @@ export function PegawaiForm({ initialData, pegawaiId }: PegawaiFormProps) {
           error={errors.jabatan}
           placeholder="Contoh: Kepala Subbagian TU"
         />
+        <Input
+          label="Gol. Ruang"
+          name="golRuang"
+          value={form.golRuang}
+          onChange={handleChange}
+          error={errors.golRuang}
+          placeholder="Contoh: IV/a, III/b"
+        />
         <Select
           label="Golongan"
           name="golongan"
@@ -122,13 +132,27 @@ export function PegawaiForm({ initialData, pegawaiId }: PegawaiFormProps) {
           error={errors.golongan}
         />
         <Select
+          label="Jenis Kelamin"
+          name="jenisKelamin"
+          value={form.jenisKelamin}
+          onChange={handleChange}
+          options={JENIS_KELAMIN_OPTIONS.map((o) => ({ value: o.value, label: o.label }))}
+          error={errors.jenisKelamin}
+        />
+        <Input
+          label="Eselonisasi"
+          name="eselonisasi"
+          value={form.eselonisasi}
+          onChange={handleChange}
+          placeholder="Contoh: III.a, IV.a"
+        />
+        <Select
           label="Unit/Bagian"
           name="unitBagian"
           value={form.unitBagian}
           onChange={handleChange}
           options={UNIT_BAGIAN_OPTIONS.map((u) => ({ value: u, label: u }))}
           placeholder="Pilih unit"
-          error={errors.unitBagian}
         />
         <Input
           label="Tanggal Masuk (TMT)"
@@ -146,7 +170,6 @@ export function PegawaiForm({ initialData, pegawaiId }: PegawaiFormProps) {
           options={STATUS_OPTIONS.map((o) => ({ value: o.value, label: o.label }))}
           error={errors.status}
         />
-
       </div>
 
       <div className="flex items-center gap-3">

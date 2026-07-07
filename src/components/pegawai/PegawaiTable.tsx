@@ -21,9 +21,10 @@ export function PegawaiTable({ data }: PegawaiTableProps) {
         "No",
         "NIP",
         "Nama",
+        "Gol. Ruang",
+        "Gol",
+        "JK",
         "Jabatan",
-        "Golongan",
-        "Unit/Bagian",
         "Status",
         "Aksi",
       ]}
@@ -33,13 +34,16 @@ export function PegawaiTable({ data }: PegawaiTableProps) {
           <Td className="text-gray-500">{index + 1}</Td>
           <Td className="font-mono text-gray-900">{pegawai.nip}</Td>
           <Td className="font-medium text-gray-900">{pegawai.nama}</Td>
-          <Td>{pegawai.jabatan}</Td>
+          <Td>{pegawai.golRuang}</Td>
           <Td>
             <span className="rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600">
               {pegawai.golongan}
             </span>
           </Td>
-          <Td className="max-w-[200px] truncate">{pegawai.unitBagian}</Td>
+          <Td>{pegawai.jenisKelamin === "L" ? "L" : "P"}</Td>
+          <Td className="max-w-[250px] truncate" title={pegawai.jabatan}>
+            {pegawai.jabatan}
+          </Td>
           <Td>
             <StatusBadge status={pegawai.status} />
           </Td>

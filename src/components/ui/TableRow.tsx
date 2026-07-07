@@ -11,6 +11,16 @@ export function TableRow({ children, highlight }: TableRowProps) {
   )
 }
 
-export function Td({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <td className={`whitespace-nowrap px-4 py-3 ${className}`}>{children}</td>
+interface TdProps {
+  children: React.ReactNode
+  className?: string
+  title?: string
+}
+
+export function Td({ children, className = "", title }: TdProps) {
+  return (
+    <td className={`whitespace-nowrap px-4 py-3 ${className}`} title={title}>
+      {children}
+    </td>
+  )
 }
