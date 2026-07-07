@@ -7,7 +7,7 @@ export const pegawaiSchema = z.object({
     .regex(/^\d+$/, "NIP hanya boleh berisi angka"),
   nama: z.string().min(1, "Nama harus diisi"),
   jabatan: z.string().min(1, "Jabatan harus diisi"),
-  golongan: z.enum(["PNS", "PPPK", "HONORER"]),
+  golongan: z.enum(["PNS", "CPNS", "PPPK"]),
   unitBagian: z.string().min(1, "Unit/Bagian harus diisi"),
   alamat: z.string().optional().default(""),
   telepon: z.string().optional().default(""),

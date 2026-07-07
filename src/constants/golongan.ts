@@ -1,7 +1,7 @@
 export const GOLONGAN_OPTIONS = [
   { value: "PNS", label: "PNS" },
   { value: "PPPK", label: "PPPK" },
-  { value: "HONORER", label: "Honorer" },
+  { value: "CPNS", label: "CPNS" },
 ] as const
 
 export const STATUS_OPTIONS = [

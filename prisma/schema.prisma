@@ -9,8 +9,8 @@ datasource db {
 
 enum Golongan {
   PNS
+  CPNS
   PPPK
-  HONORER
 }
 
 enum StatusPegawai {

@@ -3,7 +3,7 @@ export interface PegawaiData {
   nip: string
   nama: string
   jabatan: string
-  golongan: "PNS" | "PPPK" | "HONORER"
+  golongan: "PNS" | "CPNS" | "PPPK"
   unitBagian: string
   alamat: string | null
   telepon: string | null
@@ -18,7 +18,7 @@ export interface PegawaiFormData {
   nip: string
   nama: string
   jabatan: string
-  golongan: "PNS" | "PPPK" | "HONORER"
+  golongan: "PNS" | "CPNS" | "PPPK"
   unitBagian: string
   alamat: string
   telepon: string

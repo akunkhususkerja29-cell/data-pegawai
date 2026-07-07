@@ -69,7 +69,7 @@ const pegawaiData = [
     nip: "209012345678901234",
     nama: "Ani Fitriani",
     jabatan: "Staf Administrasi",
-    golongan: "HONORER" as const,
+    golongan: "CPNS" as const,
     unitBagian: "Subbagian Tata Usaha",
     alamat: "Jl. Kamboja No. 56, Palembang",
     telepon: "0816-789-0123",
