@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Golongan {
+  PNS
+  PPPK
+  HONORER
+}
+
+enum StatusPegawai {
+  AKTIF
+  NONAKTIF
+}
+
+model Pegawai {
+  id           String       @id @default(cuid())
+  nip          String       @unique
+  nama         String
+  jabatan      String
+  golongan     Golongan
+  unitBagian   String
+  alamat       String?
+  telepon      String?
+  email        String?
+  tanggalMasuk DateTime     @map("tanggal_masuk")
+  status       StatusPegawai @default(AKTIF)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+  @@map("pegawai")
+}
